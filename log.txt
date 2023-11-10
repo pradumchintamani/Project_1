@@ -1,0 +1,326 @@
+[2023-11-07T14:20:21.497Z] + rm -fv artifact.0a2a4c71490b1b86cbbf48b4e26dc2b13bdf677b.exists
+[2023-11-07T14:20:21.534Z] Searching for artifacts...
+[2023-11-07T14:20:21.732Z] Found 0 artifacts.
+[2023-11-07T14:20:21.732Z] Beginning to resolve Build Info published dependencies.
+[2023-11-07T14:20:21.732Z] Finished resolving Build Info published dependencies.
+[2023-11-07T14:20:21.759Z] The file exists in Artifactory?: false
+[2023-11-07T14:20:22.057Z] + rm -fv artifact.0a2a4c71490b1b86cbbf48b4e26dc2b13bdf677b.exists
+[2023-11-07T14:20:22.421Z] + mvn help:effective-pom -s /mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/workspace/GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI/settings.xml
+[2023-11-07T14:20:27.782Z] [1;38;5;178mThe JGP has migrated away from the name reports.zip definition in your pom.xml. The move forward will be jgp-reports.zip. This warning will be taken away next release and the job will fail. Please refer to pipelineJavaMavenContinuousIntegration.md documentation for more information on setting up your pom.xml to be compatible.
+[2023-11-07T14:20:27.783Z] GitHub: https://github.com/manulife-innersource/jenkins-generic-pipelines/blob/main/docs/pipelineJavaMavenContinuousIntegration.md[m
+[2023-11-07T14:20:27.823Z] Packaging gating reports...
+[2023-11-07T14:20:27.835Z] Creating jgp-reports folder structure...
+[2023-11-07T14:20:28.132Z] + mkdir jgp-reports
+[2023-11-07T14:20:28.447Z] + mkdir jgp-reports/code_quality jgp-reports/code_security jgp-reports/open_source_governance jgp-reports/unit_tests
+[2023-11-07T14:20:28.761Z] + mkdir jgp-reports/open_source_governance/snyk
+[2023-11-07T14:20:29.081Z] + mkdir jgp-reports/code_security/snyk_code
+[2023-11-07T14:20:29.089Z] Packaging Fortify results...
+[2023-11-07T14:20:29.105Z] Fortify was not run, nothing to package
+[2023-11-07T14:20:29.123Z] Packaging Snyk results...
+[2023-11-07T14:20:29.423Z] + cp snyk_report.json jgp-reports/open_source_governance/snyk/snyk_report.json
+[2023-11-07T14:20:29.722Z] + cp snyk_report.pdf jgp-reports/open_source_governance/snyk/snyk_report.pdf
+[2023-11-07T14:20:29.740Z] Packaging unit test results...
+[2023-11-07T14:20:29.803Z] Zipping reports...
+[2023-11-07T14:20:29.813Z] Compress /mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/workspace/GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI/jgp-reports to /mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/workspace/GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI/reports.zip
+[2023-11-07T14:20:29.828Z] Compressed 2 entries.
+[2023-11-07T14:20:29.828Z] Archiving /mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/workspace/GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI/reports.zip
+[2023-11-07T14:20:29.843Z] Reports finished zipping
+[2023-11-07T14:20:29.980Z] Jenkins Artifactory Plugin version: 3.18.0
+[2023-11-07T14:20:29.993Z] Artifactory integration is enabled
+[2023-11-07T14:20:30.011Z] [GRS_SLX_Advisor_Eservicing_Center_DEV_CI] $ /mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/tools/jdk8u372-b07/bin/java -classpath /mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/tools/apache-maven-3.5.4/boot/* -Dmaven.home=/mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/tools/apache-maven-3.5.4 -Dmaven.conf=/mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/tools/apache-maven-3.5.4/conf -DbuildInfoConfig.propertiesFile=/mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/workspace/GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI@tmp/artifactory/buildInfo10924749711878712586.properties -DbuildInfoConfig.artifactoryResolutionEnabled=true -Dm3plugin.lib=/mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/workspace/GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI@tmp/artifactory/cache/artifactory-plugin/3.18.0 -Dclassworlds.conf=/mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/workspace/GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI@tmp/artifactory/classworlds17744652104247278987conf -Dmaven.multiModuleProjectDirectory=/mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/workspace/GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI -DskipTests -Dmaven.test.skip=true org.codehaus.plexus.classworlds.launcher.Launcher -f pom.xml -q -B -U -s /mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/workspace/GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI/settings.xml -f pom.xml -Dpipeline=true -B install
+[2023-11-07T14:20:30.691Z] SLF4J: Class path contains multiple SLF4J bindings.
+[2023-11-07T14:20:30.691Z] SLF4J: Found binding in [jar:file:/mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/tools/apache-maven-3.5.4/lib/maven-slf4j-provider-3.5.4.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[2023-11-07T14:20:30.691Z] SLF4J: Found binding in [jar:file:/mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/workspace/GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI@tmp/artifactory/cache/artifactory-plugin/3.18.0/slf4j-simple-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[2023-11-07T14:20:30.691Z] SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+[2023-11-07T14:20:30.700Z] SLF4J: Actual binding is of type [org.slf4j.impl.MavenSimpleLoggerFactory]
+[2023-11-07T14:20:30.708Z] SLF4J: Class path contains multiple SLF4J bindings.
+[2023-11-07T14:20:30.711Z] SLF4J: Found binding in [jar:file:/mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/tools/apache-maven-3.5.4/lib/maven-slf4j-provider-3.5.4.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[2023-11-07T14:20:30.711Z] SLF4J: Found binding in [jar:file:/mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/workspace/GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI@tmp/artifactory/cache/artifactory-plugin/3.18.0/slf4j-simple-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[2023-11-07T14:20:30.711Z] SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+[2023-11-07T14:20:30.712Z] SLF4J: Actual binding is of type [org.slf4j.impl.MavenSimpleLoggerFactory]
+[2023-11-07T14:20:29.950Z] Executing command: /bin/sh -c git log --pretty=format:%s -1
+[2023-11-07T14:20:51.946Z] [main] ERROR org.jfrog.build.extractor.maven.BuildInfoRecorder - org.jfrog.build.extractor.maven.BuildInfoRecorder.sessionEnded() listener has failed: 
+[2023-11-07T14:20:51.952Z] java.lang.RuntimeException: java.util.concurrent.ExecutionException: java.lang.RuntimeException: Error occurred while publishing artifact to Artifactory: /mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/workspace/GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI/target/AdvisoreServicing-4.25.5.war.
+[2023-11-07T14:20:51.952Z]  Skipping deployment of remaining artifacts (if any) and build info.
+[2023-11-07T14:20:51.952Z]     at org.jfrog.build.extractor.ModuleParallelDeployHelper.deployArtifacts (ModuleParallelDeployHelper.java:38)
+[2023-11-07T14:20:51.952Z]     at org.jfrog.build.extractor.maven.BuildDeploymentHelper.deploy (BuildDeploymentHelper.java:55)
+[2023-11-07T14:20:51.952Z]     at org.jfrog.build.extractor.maven.BuildInfoRecorder.sessionEnded (BuildInfoRecorder.java:164)
+[2023-11-07T14:20:51.952Z]     at org.apache.maven.lifecycle.internal.DefaultExecutionEventCatapult.fire (DefaultExecutionEventCatapult.java:64)
+[2023-11-07T14:20:51.952Z]     at org.apache.maven.lifecycle.internal.DefaultExecutionEventCatapult.fire (DefaultExecutionEventCatapult.java:42)
+[2023-11-07T14:20:51.952Z]     at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:137)
+[2023-11-07T14:20:51.952Z]     at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+[2023-11-07T14:20:51.952Z]     at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+[2023-11-07T14:20:51.952Z]     at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+[2023-11-07T14:20:51.952Z]     at org.apache.maven.cli.MavenCli.execute (MavenCli.java:954)
+[2023-11-07T14:20:51.952Z]     at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:288)
+[2023-11-07T14:20:51.952Z]     at org.apache.maven.cli.MavenCli.main (MavenCli.java:192)
+[2023-11-07T14:20:51.952Z]     at sun.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+[2023-11-07T14:20:51.952Z]     at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+[2023-11-07T14:20:51.953Z]     at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+[2023-11-07T14:20:51.955Z]     at java.lang.reflect.Method.invoke (Method.java:498)
+[2023-11-07T14:20:51.959Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:289)
+[2023-11-07T14:20:51.962Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:229)
+[2023-11-07T14:20:51.962Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:415)
+[2023-11-07T14:20:51.962Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:356)
+[2023-11-07T14:20:51.962Z] Caused by: java.util.concurrent.ExecutionException: java.lang.RuntimeException: Error occurred while publishing artifact to Artifactory: /mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/workspace/GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI/target/AdvisoreServicing-4.25.5.war.
+[2023-11-07T14:20:51.962Z]  Skipping deployment of remaining artifacts (if any) and build info.
+[2023-11-07T14:20:51.970Z]     at java.util.concurrent.CompletableFuture.reportGet (CompletableFuture.java:357)
+[2023-11-07T14:20:51.970Z]     at java.util.concurrent.CompletableFuture.get (CompletableFuture.java:1908)
+[2023-11-07T14:20:51.970Z]     at org.jfrog.build.extractor.ModuleParallelDeployHelper.deployArtifacts (ModuleParallelDeployHelper.java:36)
+[2023-11-07T14:20:51.970Z]     at org.jfrog.build.extractor.maven.BuildDeploymentHelper.deploy (BuildDeploymentHelper.java:55)
+[2023-11-07T14:20:51.970Z]     at org.jfrog.build.extractor.maven.BuildInfoRecorder.sessionEnded (BuildInfoRecorder.java:164)
+[2023-11-07T14:20:51.970Z]     at org.apache.maven.lifecycle.internal.DefaultExecutionEventCatapult.fire (DefaultExecutionEventCatapult.java:64)
+[2023-11-07T14:20:51.970Z]     at org.apache.maven.lifecycle.internal.DefaultExecutionEventCatapult.fire (DefaultExecutionEventCatapult.java:42)
+[2023-11-07T14:20:51.970Z]     at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:137)
+[2023-11-07T14:20:51.970Z]     at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+[2023-11-07T14:20:51.970Z]     at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+[2023-11-07T14:20:51.970Z]     at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+[2023-11-07T14:20:51.970Z]     at org.apache.maven.cli.MavenCli.execute (MavenCli.java:954)
+[2023-11-07T14:20:51.970Z]     at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:288)
+[2023-11-07T14:20:51.970Z]     at org.apache.maven.cli.MavenCli.main (MavenCli.java:192)
+[2023-11-07T14:20:51.970Z]     at sun.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+[2023-11-07T14:20:51.970Z]     at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+[2023-11-07T14:20:51.970Z]     at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+[2023-11-07T14:20:51.970Z]     at java.lang.reflect.Method.invoke (Method.java:498)
+[2023-11-07T14:20:51.970Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:289)
+[2023-11-07T14:20:51.970Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:229)
+[2023-11-07T14:20:51.971Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:415)
+[2023-11-07T14:20:51.974Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:356)
+[2023-11-07T14:20:51.985Z] Caused by: java.lang.RuntimeException: Error occurred while publishing artifact to Artifactory: /mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/workspace/GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI/target/AdvisoreServicing-4.25.5.war.
+[2023-11-07T14:20:51.988Z]  Skipping deployment of remaining artifacts (if any) and build info.
+[2023-11-07T14:20:51.991Z]     at org.jfrog.build.extractor.ModuleParallelDeployHelper.lambda$deploy$4 (ModuleParallelDeployHelper.java:57)
+[2023-11-07T14:20:51.993Z]     at java.lang.Iterable.forEach (Iterable.java:75)
+[2023-11-07T14:20:51.997Z]     at org.jfrog.build.extractor.ModuleParallelDeployHelper.deploy (ModuleParallelDeployHelper.java:44)
+[2023-11-07T14:20:51.999Z]     at org.jfrog.build.extractor.ModuleParallelDeployHelper.lambda$null$1 (ModuleParallelDeployHelper.java:34)
+[2023-11-07T14:20:51.999Z]     at java.util.concurrent.CompletableFuture$AsyncRun.run (CompletableFuture.java:1640)
+[2023-11-07T14:20:51.999Z]     at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1149)
+[2023-11-07T14:20:51.999Z]     at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:624)
+[2023-11-07T14:20:51.999Z]     at java.lang.Thread.run (Thread.java:750)
+[2023-11-07T14:20:51.999Z] Caused by: java.net.SocketException: Broken pipe (Write failed)
+[2023-11-07T14:20:51.999Z]     at java.net.SocketOutputStream.socketWrite0 (Native Method)
+[2023-11-07T14:20:51.999Z]     at java.net.SocketOutputStream.socketWrite (SocketOutputStream.java:111)
+[2023-11-07T14:20:51.999Z]     at java.net.SocketOutputStream.write (SocketOutputStream.java:155)
+[2023-11-07T14:20:51.999Z]     at sun.security.ssl.SSLSocketOutputRecord.deliver (SSLSocketOutputRecord.java:319)
+[2023-11-07T14:20:51.999Z]     at sun.security.ssl.SSLSocketImpl$AppOutputStream.write (SSLSocketImpl.java:1193)
+[2023-11-07T14:20:51.999Z]     at org.apache.http.impl.io.SessionOutputBufferImpl.streamWrite (SessionOutputBufferImpl.java:124)
+[2023-11-07T14:20:51.999Z]     at org.apache.http.impl.io.SessionOutputBufferImpl.flushBuffer (SessionOutputBufferImpl.java:136)
+[2023-11-07T14:20:51.999Z]     at org.apache.http.impl.io.SessionOutputBufferImpl.write (SessionOutputBufferImpl.java:167)
+[2023-11-07T14:20:51.999Z]     at org.apache.http.impl.io.ContentLengthOutputStream.write (ContentLengthOutputStream.java:113)
+[2023-11-07T14:20:51.999Z]     at org.apache.http.entity.FileEntity.writeTo (FileEntity.java:113)
+[2023-11-07T14:20:51.999Z]     at org.apache.http.impl.DefaultBHttpClientConnection.sendRequestEntity (DefaultBHttpClientConnection.java:156)
+[2023-11-07T14:20:51.999Z]     at org.apache.http.impl.conn.CPoolProxy.sendRequestEntity (CPoolProxy.java:152)
+[2023-11-07T14:20:51.999Z]     at org.apache.http.protocol.HttpRequestExecutor.doSendRequest (HttpRequestExecutor.java:238)
+[2023-11-07T14:20:51.999Z]     at org.apache.http.protocol.HttpRequestExecutor.execute (HttpRequestExecutor.java:123)
+[2023-11-07T14:20:51.999Z]     at org.apache.http.impl.execchain.MainClientExec.execute (MainClientExec.java:272)
+[2023-11-07T14:20:52.000Z]     at org.apache.http.impl.execchain.ProtocolExec.execute (ProtocolExec.java:186)
+[2023-11-07T14:20:52.002Z]     at org.apache.http.impl.execchain.RetryExec.execute (RetryExec.java:89)
+[2023-11-07T14:20:52.002Z]     at org.apache.http.impl.execchain.ServiceUnavailableRetryExec.execute (ServiceUnavailableRetryExec.java:85)
+[2023-11-07T14:20:52.002Z]     at org.apache.http.impl.execchain.RedirectExec.execute (RedirectExec.java:110)
+[2023-11-07T14:20:52.002Z]     at org.apache.http.impl.client.InternalHttpClient.doExecute (InternalHttpClient.java:185)
+[2023-11-07T14:20:52.002Z]     at org.apache.http.impl.client.CloseableHttpClient.execute (CloseableHttpClient.java:83)
+[2023-11-07T14:20:52.002Z]     at org.jfrog.build.client.PreemptiveHttpClient.execute (PreemptiveHttpClient.java:72)
+[2023-11-07T14:20:52.002Z]     at org.jfrog.build.client.JFrogHttpClient.sendRequest (JFrogHttpClient.java:133)
+[2023-11-07T14:20:52.002Z]     at org.jfrog.build.extractor.clientConfiguration.client.JFrogService.execute (JFrogService.java:112)
+[2023-11-07T14:20:52.002Z]     at org.jfrog.build.extractor.clientConfiguration.client.artifactory.services.Upload.execute (Upload.java:77)
+[2023-11-07T14:20:52.002Z]     at org.jfrog.build.extractor.clientConfiguration.client.artifactory.ArtifactoryManager.upload (ArtifactoryManager.java:267)
+[2023-11-07T14:20:52.002Z]     at org.jfrog.build.extractor.clientConfiguration.client.artifactory.ArtifactoryManager.upload (ArtifactoryManager.java:262)
+[2023-11-07T14:20:52.002Z]     at org.jfrog.build.extractor.ModuleParallelDeployHelper.lambda$deploy$4 (ModuleParallelDeployHelper.java:46)
+[2023-11-07T14:20:52.002Z]     at java.lang.Iterable.forEach (Iterable.java:75)
+[2023-11-07T14:20:52.002Z]     at org.jfrog.build.extractor.ModuleParallelDeployHelper.deploy (ModuleParallelDeployHelper.java:44)
+[2023-11-07T14:20:52.002Z]     at org.jfrog.build.extractor.ModuleParallelDeployHelper.lambda$null$1 (ModuleParallelDeployHelper.java:34)
+[2023-11-07T14:20:52.002Z]     at java.util.concurrent.CompletableFuture$AsyncRun.run (CompletableFuture.java:1640)
+[2023-11-07T14:20:52.002Z]     at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1149)
+[2023-11-07T14:20:52.002Z]     at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:624)
+[2023-11-07T14:20:52.002Z]     at java.lang.Thread.run (Thread.java:750)
+[2023-11-07T14:20:52.004Z] [main] ERROR org.apache.maven.cli.MavenCli - Internal error: java.lang.RuntimeException: org.jfrog.build.extractor.maven.BuildInfoRecorder.sessionEnded() listener has failed: java.util.concurrent.ExecutionException: java.lang.RuntimeException: Error occurred while publishing artifact to Artifactory: /mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/workspace/GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI/target/AdvisoreServicing-4.25.5.war.
+[2023-11-07T14:20:52.004Z] [main] ERROR org.apache.maven.cli.MavenCli -  Skipping deployment of remaining artifacts (if any) and build info. Broken pipe (Write failed)
+[2023-11-07T14:20:52.004Z] [main] ERROR org.apache.maven.cli.MavenCli - -> [Help 1]
+[2023-11-07T14:20:52.004Z] org.apache.maven.InternalErrorException: Internal error: java.lang.RuntimeException: org.jfrog.build.extractor.maven.BuildInfoRecorder.sessionEnded() listener has failed: 
+[2023-11-07T14:20:52.004Z]     at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:120)
+[2023-11-07T14:20:52.004Z]     at org.apache.maven.cli.MavenCli.execute (MavenCli.java:954)
+[2023-11-07T14:20:52.004Z]     at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:288)
+[2023-11-07T14:20:52.004Z]     at org.apache.maven.cli.MavenCli.main (MavenCli.java:192)
+[2023-11-07T14:20:52.004Z]     at sun.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+[2023-11-07T14:20:52.004Z]     at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+[2023-11-07T14:20:52.004Z]     at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+[2023-11-07T14:20:52.004Z]     at java.lang.reflect.Method.invoke (Method.java:498)
+[2023-11-07T14:20:52.004Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:289)
+[2023-11-07T14:20:52.004Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:229)
+[2023-11-07T14:20:52.004Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:415)
+[2023-11-07T14:20:52.004Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:356)
+[2023-11-07T14:20:52.006Z] Caused by: java.lang.RuntimeException: org.jfrog.build.extractor.maven.BuildInfoRecorder.sessionEnded() listener has failed: 
+[2023-11-07T14:20:52.006Z]     at org.jfrog.build.extractor.maven.BuildInfoRecorder.sessionEnded (BuildInfoRecorder.java:173)
+[2023-11-07T14:20:52.006Z]     at org.apache.maven.lifecycle.internal.DefaultExecutionEventCatapult.fire (DefaultExecutionEventCatapult.java:64)
+[2023-11-07T14:20:52.017Z]     at org.apache.maven.lifecycle.internal.DefaultExecutionEventCatapult.fire (DefaultExecutionEventCatapult.java:42)
+[2023-11-07T14:20:52.017Z]     at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:137)
+[2023-11-07T14:20:52.017Z]     at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+[2023-11-07T14:20:52.017Z]     at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+[2023-11-07T14:20:52.017Z]     at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+[2023-11-07T14:20:52.017Z]     at org.apache.maven.cli.MavenCli.execute (MavenCli.java:954)
+[2023-11-07T14:20:52.017Z]     at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:288)
+[2023-11-07T14:20:52.017Z]     at org.apache.maven.cli.MavenCli.main (MavenCli.java:192)
+[2023-11-07T14:20:52.017Z]     at sun.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+[2023-11-07T14:20:52.017Z]     at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+[2023-11-07T14:20:52.017Z]     at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+[2023-11-07T14:20:52.017Z]     at java.lang.reflect.Method.invoke (Method.java:498)
+[2023-11-07T14:20:52.017Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:289)
+[2023-11-07T14:20:52.017Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:229)
+[2023-11-07T14:20:52.017Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:415)
+[2023-11-07T14:20:52.017Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:356)
+[2023-11-07T14:20:52.017Z] Caused by: java.lang.RuntimeException: java.util.concurrent.ExecutionException: java.lang.RuntimeException: Error occurred while publishing artifact to Artifactory: /mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/workspace/GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI/target/AdvisoreServicing-4.25.5.war.
+[2023-11-07T14:20:52.017Z]  Skipping deployment of remaining artifacts (if any) and build info.
+[2023-11-07T14:20:52.017Z]     at org.jfrog.build.extractor.ModuleParallelDeployHelper.deployArtifacts (ModuleParallelDeployHelper.java:38)
+[2023-11-07T14:20:52.017Z]     at org.jfrog.build.extractor.maven.BuildDeploymentHelper.deploy (BuildDeploymentHelper.java:55)
+[2023-11-07T14:20:52.017Z]     at org.jfrog.build.extractor.maven.BuildInfoRecorder.sessionEnded (BuildInfoRecorder.java:164)
+[2023-11-07T14:20:52.017Z]     at org.apache.maven.lifecycle.internal.DefaultExecutionEventCatapult.fire (DefaultExecutionEventCatapult.java:64)
+[2023-11-07T14:20:52.017Z]     at org.apache.maven.lifecycle.internal.DefaultExecutionEventCatapult.fire (DefaultExecutionEventCatapult.java:42)
+[2023-11-07T14:20:52.018Z]     at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:137)
+[2023-11-07T14:20:52.018Z]     at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+[2023-11-07T14:20:52.019Z]     at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+[2023-11-07T14:20:52.022Z]     at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+[2023-11-07T14:20:52.022Z]     at org.apache.maven.cli.MavenCli.execute (MavenCli.java:954)
+[2023-11-07T14:20:52.022Z]     at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:288)
+[2023-11-07T14:20:52.022Z]     at org.apache.maven.cli.MavenCli.main (MavenCli.java:192)
+[2023-11-07T14:20:52.022Z]     at sun.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+[2023-11-07T14:20:52.022Z]     at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+[2023-11-07T14:20:52.022Z]     at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+[2023-11-07T14:20:52.022Z]     at java.lang.reflect.Method.invoke (Method.java:498)
+[2023-11-07T14:20:52.024Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:289)
+[2023-11-07T14:20:52.027Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:229)
+[2023-11-07T14:20:52.030Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:415)
+[2023-11-07T14:20:52.033Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:356)
+[2023-11-07T14:20:52.044Z] Caused by: java.util.concurrent.ExecutionException: java.lang.RuntimeException: Error occurred while publishing artifact to Artifactory: /mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/workspace/GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI/target/AdvisoreServicing-4.25.5.war.
+[2023-11-07T14:20:52.044Z]  Skipping deployment of remaining artifacts (if any) and build info.
+[2023-11-07T14:20:52.044Z]     at java.util.concurrent.CompletableFuture.reportGet (CompletableFuture.java:357)
+[2023-11-07T14:20:52.044Z]     at java.util.concurrent.CompletableFuture.get (CompletableFuture.java:1908)
+[2023-11-07T14:20:52.044Z]     at org.jfrog.build.extractor.ModuleParallelDeployHelper.deployArtifacts (ModuleParallelDeployHelper.java:36)
+[2023-11-07T14:20:52.044Z]     at org.jfrog.build.extractor.maven.BuildDeploymentHelper.deploy (BuildDeploymentHelper.java:55)
+[2023-11-07T14:20:52.044Z]     at org.jfrog.build.extractor.maven.BuildInfoRecorder.sessionEnded (BuildInfoRecorder.java:164)
+[2023-11-07T14:20:52.044Z]     at org.apache.maven.lifecycle.internal.DefaultExecutionEventCatapult.fire (DefaultExecutionEventCatapult.java:64)
+[2023-11-07T14:20:52.044Z]     at org.apache.maven.lifecycle.internal.DefaultExecutionEventCatapult.fire (DefaultExecutionEventCatapult.java:42)
+[2023-11-07T14:20:52.044Z]     at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:137)
+[2023-11-07T14:20:52.044Z]     at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+[2023-11-07T14:20:52.044Z]     at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+[2023-11-07T14:20:52.044Z]     at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+[2023-11-07T14:20:52.044Z]     at org.apache.maven.cli.MavenCli.execute (MavenCli.java:954)
+[2023-11-07T14:20:52.044Z]     at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:288)
+[2023-11-07T14:20:52.044Z]     at org.apache.maven.cli.MavenCli.main (MavenCli.java:192)
+[2023-11-07T14:20:52.044Z]     at sun.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+[2023-11-07T14:20:52.044Z]     at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+[2023-11-07T14:20:52.044Z]     at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+[2023-11-07T14:20:52.044Z]     at java.lang.reflect.Method.invoke (Method.java:498)
+[2023-11-07T14:20:52.044Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:289)
+[2023-11-07T14:20:52.044Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:229)
+[2023-11-07T14:20:52.044Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:415)
+[2023-11-07T14:20:52.044Z]     at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:356)
+[2023-11-07T14:20:52.044Z] Caused by: java.lang.RuntimeException: Error occurred while publishing artifact to Artifactory: /mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/workspace/GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI/target/AdvisoreServicing-4.25.5.war.
+[2023-11-07T14:20:52.044Z]  Skipping deployment of remaining artifacts (if any) and build info.
+[2023-11-07T14:20:52.044Z]     at org.jfrog.build.extractor.ModuleParallelDeployHelper.lambda$deploy$4 (ModuleParallelDeployHelper.java:57)
+[2023-11-07T14:20:52.044Z]     at java.lang.Iterable.forEach (Iterable.java:75)
+[2023-11-07T14:20:52.044Z]     at org.jfrog.build.extractor.ModuleParallelDeployHelper.deploy (ModuleParallelDeployHelper.java:44)
+[2023-11-07T14:20:52.044Z]     at org.jfrog.build.extractor.ModuleParallelDeployHelper.lambda$null$1 (ModuleParallelDeployHelper.java:34)
+[2023-11-07T14:20:52.044Z]     at java.util.concurrent.CompletableFuture$AsyncRun.run (CompletableFuture.java:1640)
+[2023-11-07T14:20:52.044Z]     at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1149)
+[2023-11-07T14:20:52.044Z]     at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:624)
+[2023-11-07T14:20:52.044Z]     at java.lang.Thread.run (Thread.java:750)
+[2023-11-07T14:20:52.044Z] Caused by: java.net.SocketException: Broken pipe (Write failed)
+[2023-11-07T14:20:52.047Z]     at java.net.SocketOutputStream.socketWrite0 (Native Method)
+[2023-11-07T14:20:52.047Z]     at java.net.SocketOutputStream.socketWrite (SocketOutputStream.java:111)
+[2023-11-07T14:20:52.047Z]     at java.net.SocketOutputStream.write (SocketOutputStream.java:155)
+[2023-11-07T14:20:52.047Z]     at sun.security.ssl.SSLSocketOutputRecord.deliver (SSLSocketOutputRecord.java:319)
+[2023-11-07T14:20:52.047Z]     at sun.security.ssl.SSLSocketImpl$AppOutputStream.write (SSLSocketImpl.java:1193)
+[2023-11-07T14:20:52.047Z]     at org.apache.http.impl.io.SessionOutputBufferImpl.streamWrite (SessionOutputBufferImpl.java:124)
+[2023-11-07T14:20:52.047Z]     at org.apache.http.impl.io.SessionOutputBufferImpl.flushBuffer (SessionOutputBufferImpl.java:136)
+[2023-11-07T14:20:52.047Z]     at org.apache.http.impl.io.SessionOutputBufferImpl.write (SessionOutputBufferImpl.java:167)
+[2023-11-07T14:20:52.047Z]     at org.apache.http.impl.io.ContentLengthOutputStream.write (ContentLengthOutputStream.java:113)
+[2023-11-07T14:20:52.047Z]     at org.apache.http.entity.FileEntity.writeTo (FileEntity.java:113)
+[2023-11-07T14:20:52.047Z]     at org.apache.http.impl.DefaultBHttpClientConnection.sendRequestEntity (DefaultBHttpClientConnection.java:156)
+[2023-11-07T14:20:52.047Z]     at org.apache.http.impl.conn.CPoolProxy.sendRequestEntity (CPoolProxy.java:152)
+[2023-11-07T14:20:52.047Z]     at org.apache.http.protocol.HttpRequestExecutor.doSendRequest (HttpRequestExecutor.java:238)
+[2023-11-07T14:20:52.051Z]     at org.apache.http.protocol.HttpRequestExecutor.execute (HttpRequestExecutor.java:123)
+[2023-11-07T14:20:52.051Z]     at org.apache.http.impl.execchain.MainClientExec.execute (MainClientExec.java:272)
+[2023-11-07T14:20:52.051Z]     at org.apache.http.impl.execchain.ProtocolExec.execute (ProtocolExec.java:186)
+[2023-11-07T14:20:52.051Z]     at org.apache.http.impl.execchain.RetryExec.execute (RetryExec.java:89)
+[2023-11-07T14:20:52.051Z]     at org.apache.http.impl.execchain.ServiceUnavailableRetryExec.execute (ServiceUnavailableRetryExec.java:85)
+[2023-11-07T14:20:52.051Z]     at org.apache.http.impl.execchain.RedirectExec.execute (RedirectExec.java:110)
+[2023-11-07T14:20:52.051Z]     at org.apache.http.impl.client.InternalHttpClient.doExecute (InternalHttpClient.java:185)
+[2023-11-07T14:20:52.051Z]     at org.apache.http.impl.client.CloseableHttpClient.execute (CloseableHttpClient.java:83)
+[2023-11-07T14:20:52.051Z]     at org.jfrog.build.client.PreemptiveHttpClient.execute (PreemptiveHttpClient.java:72)
+[2023-11-07T14:20:52.052Z]     at org.jfrog.build.client.JFrogHttpClient.sendRequest (JFrogHttpClient.java:133)
+[2023-11-07T14:20:52.053Z]     at org.jfrog.build.extractor.clientConfiguration.client.JFrogService.execute (JFrogService.java:112)
+[2023-11-07T14:20:52.054Z]     at org.jfrog.build.extractor.clientConfiguration.client.artifactory.services.Upload.execute (Upload.java:77)
+[2023-11-07T14:20:52.055Z]     at org.jfrog.build.extractor.clientConfiguration.client.artifactory.ArtifactoryManager.upload (ArtifactoryManager.java:267)
+[2023-11-07T14:20:52.058Z]     at org.jfrog.build.extractor.clientConfiguration.client.artifactory.ArtifactoryManager.upload (ArtifactoryManager.java:262)
+[2023-11-07T14:20:52.059Z]     at org.jfrog.build.extractor.ModuleParallelDeployHelper.lambda$deploy$4 (ModuleParallelDeployHelper.java:46)
+[2023-11-07T14:20:52.059Z]     at java.lang.Iterable.forEach (Iterable.java:75)
+[2023-11-07T14:20:52.059Z]     at org.jfrog.build.extractor.ModuleParallelDeployHelper.deploy (ModuleParallelDeployHelper.java:44)
+[2023-11-07T14:20:52.060Z]     at org.jfrog.build.extractor.ModuleParallelDeployHelper.lambda$null$1 (ModuleParallelDeployHelper.java:34)
+[2023-11-07T14:20:52.061Z]     at java.util.concurrent.CompletableFuture$AsyncRun.run (CompletableFuture.java:1640)
+[2023-11-07T14:20:52.062Z]     at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1149)
+[2023-11-07T14:20:52.063Z]     at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:624)
+[2023-11-07T14:20:52.064Z]     at java.lang.Thread.run (Thread.java:750)
+[2023-11-07T14:20:52.064Z] [main] ERROR org.apache.maven.cli.MavenCli - 
+[2023-11-07T14:20:52.067Z] [main] ERROR org.apache.maven.cli.MavenCli - To see the full stack trace of the errors, re-run Maven with the -e switch.
+[2023-11-07T14:20:52.068Z] [main] ERROR org.apache.maven.cli.MavenCli - Re-run Maven using the -X switch to enable full debug logging.
+[2023-11-07T14:20:52.069Z] [main] ERROR org.apache.maven.cli.MavenCli - 
+[2023-11-07T14:20:52.071Z] [main] ERROR org.apache.maven.cli.MavenCli - For more information about the errors and possible solutions, please read the following articles:
+[2023-11-07T14:20:52.071Z] [main] ERROR org.apache.maven.cli.MavenCli - [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/InternalErrorException
+[2023-11-07T14:20:52.105Z] ERROR: Couldn't execute Maven task. RuntimeException: Maven build failed with exit code 1
+Maven build failed. Couldn't execute Maven task. RuntimeException: Maven build failed with exit code 1[2023-11-07T14:20:52.268Z] Archiving artifacts
+[2023-11-07T14:20:52.301Z] Archiving artifacts
+[2023-11-07T14:20:54.368Z] Recording test results
+[2023-11-07T14:20:54.381Z] [Checks API] No suitable checks publisher found.
+[2023-11-07T14:20:54.374Z] No test report files were found. Configuration error?
+[2023-11-07T14:20:54.503Z] localBranchName = release/2023-12
+[2023-11-07T14:20:55.016Z] + curl --header 'Accept: application/vnd.github.v3+json' --user **** --request GET 'https://api.github.com/repos/manulife-innersource/jenkins-generic-pipelines/contents/pom.xml?ref=main'
+[2023-11-07T14:20:55.016Z]   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+[2023-11-07T14:20:55.017Z]                                  Dload  Upload   Total   Spent    Left  Speed
+[2023-11-07T14:20:55.288Z]   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 18038  100 18038    0     0  78426      0 --:--:-- --:--:-- --:--:-- 78426
+[2023-11-07T14:20:55.411Z] Getting Gating Environment Info using Job Name Specs
+[2023-11-07T14:20:55.853Z] + curl --header 'Accept: application/vnd.github.v3+json' --user **** --request GET https://api.github.com/repos/manulife-gwam/GRS-AgileSoft-advisor_eservicing_center/teams
+[2023-11-07T14:20:55.853Z]   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+[2023-11-07T14:20:55.853Z]                                  Dload  Upload   Total   Spent    Left  Speed
+[2023-11-07T14:20:56.123Z]   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  3167  100  3167    0     0   8921      0 --:--:-- --:--:-- --:--:--  8921
+[2023-11-07T14:20:56.681Z] + curl -X POST --header 'Authorization: token ****' --header 'Content-Type: application/json; charset=utf-8 ' --insecure -s -o /mnt/sdc1/opt/Jenkins/data/jenkins_remote_fs/workspace/GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI@tmp/pipelineRunAuditTrailing_response.txt --write-out '%{http_code}' --data '{"segment": "GWAM", "businessUnit": "GRS", "squad": "N/A", "squadId": "N/A", "pipelineType": "pipelineJavaMavenContinuousIntegration", "buildCauses": "Started by user Pradum Vinod-Chintamani", "buildAction": "CI", "buildEnvironment": "DEV", "prod": "false", "jobShortName": "GRS_SLX_Advisor_Eservicing_Center_DEV_CI", "jobLongName": "GRS_Projects/GRS_SLX/GRS_SLX_Advisor_Eservicing_Center/GRS_SLX_Advisor_Eservicing_Center_DEV_CI", "jobNumber": "90", "jobResult": "FAILURE", "error(s)": "TODO", "terraformCompliance": "N/A", "durationInMillis": 352711, "durationString": "5 min 52 sec and counting", "commitId": "0a2a4c71490b1b86cbbf48b4e26dc2b13bdf677b", "gitProjectId": "0", "gitEvent": "manual", "gitSSH": "github.com:manulife-gwam/GRS-AgileSoft-advisor_eservicing_center", "branch": "release/2023-12", "jgpBranch": "main", "jgpVersion": "1.122.5", "usingDockerAgent": "false", "failedStage": "Package and Store", "changeTicket": "", "changeTicketSecurityApprovedGroup": "null", "changeTicketCI": "null", "changeTicketSeverity": "null", "targetEnvironment": "", "stageTimings": {"init":4666,"build":58930,"open-source_governance":61107,"run_unit_tests":47215,"code_review":155726,"package_and_store":0}, "sonarQubeResults": {"gateStatus":"true","gateStatusMsg":"The project PASSED the Code Quality Gate!","blockerIssueCount":"0","majorIssueCount":"0","criticalIssueCount":"0"}, "snykResults": {"gateStatus":"false","gateStatusMsg":"The project FAILED the Open-Source Governance Gate."}, "snykCodeResults": {"gateStatus":"N/A","gateStatusMsg":"N/A"}, "fortifyResults": {"gateStatus":"false","gateStatusMsg":"Project status UNKNOWN.  Fortify wasn\\\\t called.","issueCount":"0"}, "artifactInfo": "N/A", "azureDeployment": null, "artifactCommitId": "N/A", "jenkinsNodeName": "AZLPHPCDTJNKP03", "buildContext": {"parameters": {"jenkinsNodeLabelSelector":"JavaMavenCI","forceFullScan":"false","loggingLevel":"INFO"}, "properties": {"artifactoryDeploymentPattern":"*.war","artifactoryTokenCredId":"ARTIFACTORY_GRS_TOKEN_TEST","artifactoryCredentialsId":"ARTIFACTORY-GRS-CRED","gitLabSSHCredentialsId":"dsdevops (SSH Key)","snykGatingEnabled":"false","mavenBuildGoal":"-T 2 -B clean compile","emailJenkinsNotificationsTo":"DevOps_GRS_Plus@manulife.com","releaseRepo":"mfc-grs-maven-release","snapshotRepo":"mfc-grs-maven-snapshot","mavenTestGoal":"-B -f pom.xml test -Dmaven.test.skip=true","fortifyGating":"false","fortifyTriggers":"develop","hubTimeoutMinutes":"90","sonarQubeFailPipelineOnFailedQualityGate":"false","hubVersionPhase":"DEVELOPMENT","hubVersionDist":"INTERNAL","hubTriggers":"develop","hubFailPipelineOnFailedOpenSourceGovernance":"false"},"configuration": {"propertiesFileName":"dev-ci.properties","jenkinsJobInitialAgent":"multi-platform-general","jenkinsJobTimeOutInMinutes":45,"jenkinsJobTriggerOnPush":false,"jenkinsJobTriggerOnMergeRequest":false,"jenkinsJobRegEx":"^[develop].*","jenkinsJobSecretToken":"JGP"}, "deployArtifacts": {}}}' 'https://jgp-audit.azurewebsites.net/api/jgp-audit?code=****&type=jenkins'
+[2023-11-07T14:20:57.220Z] Document ID - 654a47c829a926002b65a01c
+[2023-11-07T14:20:57.238Z] JGP AuditTrail Submitted (Azure Function)
+[2023-11-07T14:20:57.297Z] Sending Notifications...
+[2023-11-07T14:20:57.443Z] Not sending mail to unregistered user GWAM_SecurityEngineering@manulife.com because your SCM claimed this was associated with a user ID ‘GWAM_SecurityEngineering' which your security realm does not recognize; you may need changes in your SCM plugin
+[2023-11-07T14:20:57.470Z] Not sending mail to unregistered user NoReply@jhancock.com because your SCM claimed this was associated with a user ID ‘No Reply' which your security realm does not recognize; you may need changes in your SCM plugin
+[2023-11-07T14:20:57.471Z] Sending email to: DevOps_GRS_Plus@manulife.com
+[2023-11-07T14:20:57.591Z] **************************************************************************************
+[2023-11-07T14:20:57.591Z] ************************  Jenkins Generic Pipelines Version  *************************
+[2023-11-07T14:20:57.591Z] **************************************************************************************
+[2023-11-07T14:20:57.591Z] [32mUsing 'main' JGP branch.[m
+[2023-11-07T14:20:57.591Z] **************************************************************************************
+[2023-11-07T14:20:57.591Z] 
+[2023-11-07T14:20:57.692Z] ###########################################################################################################
+[2023-11-07T14:20:57.692Z] ######                                         GATING REPORT                                         ######
+[2023-11-07T14:20:57.692Z] ###########################################################################################################
+[2023-11-07T14:20:57.692Z] [32mCode Quality Gate: The project PASSED the Code Quality Gate![m
+[2023-11-07T14:20:57.692Z] [1;38;5;178mSnyk Code Security Gate: Project status UNKNOWN. Snyk Code wasn't called.[m
+[2023-11-07T14:20:57.692Z] [1;38;5;178mCode Security Gate: Project status UNKNOWN.  Fortify wasn't called.[m
+[2023-11-07T14:20:57.692Z] [31mOpen-Source Governance Gate (Snyk): The project FAILED the Open-Source Governance Gate.[m
+[2023-11-07T14:20:57.692Z] ###########################################################################################################
+[2023-11-07T14:20:57.692Z] 
+[2023-11-07T14:20:57.944Z] **************************************************************************************
+[2023-11-07T14:20:57.944Z] ************************************* Need Help? *************************************
+[2023-11-07T14:20:57.944Z] **************************************************************************************
+[2023-11-07T14:20:57.944Z]   1) Make sure you review the official documentation here: https://github.com/manulife-innersource/jenkins-generic-pipelines/tree/main/docs
+[2023-11-07T14:20:57.944Z]   2) Try to find the answer on the Manulife StackOverflow Confluence space (over 1000+ articles may take a couple of minutes to load): https://manulife-cdn.atlassian.net/wiki/spaces/CDTSTOFML/overview
+[2023-11-07T14:20:57.944Z] **************************************************************************************
+[2023-11-07T14:20:57.944Z] 
+[2023-11-07T14:20:58.408Z] Determining user actions...
+[2023-11-07T14:20:58.469Z] Generating JGP Execution Report...
+[2023-11-07T14:20:59.667Z] + git clone git@github.com:manulife-ca/jgp-pipeline-report-utlilty.git
+[2023-11-07T14:20:59.667Z] Cloning into 'jgp-pipeline-report-utlilty'...
+[2023-11-07T14:21:01.027Z] + pip3 install jinja2
+[2023-11-07T14:21:01.650Z] Requirement already satisfied: jinja2 in /usr/lib/python3.6/site-packages
+[2023-11-07T14:21:01.650Z] Requirement already satisfied: MarkupSafe>=0.23 in /usr/lib64/python3.6/site-packages (from jinja2)
+[2023-11-07T14:21:02.227Z] + python3 main.py ../jgp_execution_data.json
+[2023-11-07T14:21:02.572Z] + cp jgp-pipeline-report-utlilty/PipelineSummary.html PipelineSummary.html
+[2023-11-07T14:21:02.890Z] + rm -rf jgp-pipeline-report-utlilty
+[2023-11-07T14:21:02.907Z] Archiving artifacts
+[2023-11-07T14:21:02.972Z] [WS-CLEANUP] Deleting project workspace...
+[2023-11-07T14:21:02.972Z] [WS-CLEANUP] Deferred wipeout is used...
+[2023-11-07T14:21:02.986Z] [WS-CLEANUP] done
